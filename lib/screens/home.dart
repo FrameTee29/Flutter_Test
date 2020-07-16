@@ -64,22 +64,31 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: RadialGradient(
+              colors: [Colors.white, Colors.orange[700]],
+              radius: 1.0,
+            ),
+          ),
           child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            showlogo(),
-            SizedBox(
-              height: 8.0,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                showlogo(),
+                SizedBox(
+                  height: 8.0,
+                ),
+                showAppName(),
+                SizedBox(
+                  height: 8.0,
+                ),
+                showButton(),
+              ],
             ),
-            showAppName(),
-            SizedBox(
-              height: 8.0,
-            ),
-            showButton(),
-          ],
+          ),
         ),
-      )),
+      ),
     );
   }
 }
