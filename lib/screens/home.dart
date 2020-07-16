@@ -6,12 +6,19 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  Widget showAppName() {
+    return Text('Ung Shopping Mall');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Text('This is Home'),
-      ),
+          child: Center(
+        child: Column(mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[showAppName(), showAppName(), showAppName()],
+        ),
+      )),
     );
   }
 }
