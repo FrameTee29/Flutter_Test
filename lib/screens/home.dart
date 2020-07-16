@@ -7,13 +7,22 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   Widget showlogo() {
-    return Container(width: 150.0,
+    return Container(
+      width: 150.0,
       child: Image.asset('images/logo.png'),
     );
   }
 
   Widget showAppName() {
-    return Text('Ung Shopping Mall',style: ,);
+    return Text(
+      'PSUCOIN',
+      style: TextStyle(
+        fontSize: 30.0,
+        color: Colors.green.shade600,
+        fontWeight: FontWeight.bold,
+        fontStyle: FontStyle.italic,
+      ),
+    );
   }
 
   @override
