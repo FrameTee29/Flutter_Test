@@ -18,9 +18,10 @@ class _HomeState extends State<Home> {
       'PSUCOIN',
       style: TextStyle(
         fontSize: 30.0,
-        color: Colors.green.shade600,
+        color: Colors.green.shade500,
         fontWeight: FontWeight.bold,
         fontStyle: FontStyle.italic,
+        fontFamily: 'Mansalva',
       ),
     );
   }
