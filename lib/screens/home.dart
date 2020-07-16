@@ -28,7 +28,7 @@ class _HomeState extends State<Home> {
 
   Widget signInbutton() {
     return RaisedButton(
-      color: Colors.green[800],
+      color: Colors.green,
       child: Text(
         'Sign in',
         style: TextStyle(
@@ -67,7 +67,7 @@ class _HomeState extends State<Home> {
         child: Container(
           decoration: BoxDecoration(
             gradient: RadialGradient(
-              colors: [Colors.white, Colors.orange[700]],
+              colors: [Colors.white, Colors.grey[600]],
               radius: 1.0,
             ),
           ),
