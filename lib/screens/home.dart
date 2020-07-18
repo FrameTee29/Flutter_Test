@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testapp/screens/register.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -43,7 +44,13 @@ class _HomeState extends State<Home> {
   Widget signupbutton() {
     return OutlineButton(
       child: Text('Sign Up'),
-      onPressed: () {},
+      onPressed: () {
+        print('You click signup');
+
+        MaterialPageRoute materialPageRoute =
+            MaterialPageRoute(builder: (BuildContext context) => Register());
+        Navigator.of(context).push(materialPageRoute);
+      },
     );
   }
 
