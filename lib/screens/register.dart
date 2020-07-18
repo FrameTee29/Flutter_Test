@@ -19,10 +19,27 @@ class _RegisterState extends State<Register> {
     );
   }
 
-
-Widget nameText(){
-  return TextFormField();
-}
+  Widget nameText() {
+    return TextFormField(style: TextStyle(color:Colors.purple),
+      decoration: InputDecoration(
+        icon: Icon(
+          Icons.account_box,
+          color: Colors.purple,
+          size: 40.0,
+        ),
+        labelText: 'Firstname :',
+        labelStyle: TextStyle(
+          color: Colors.purple,
+          fontWeight: FontWeight.bold,
+        ),
+        helperText: 'Type your firstname ',
+        helperStyle: TextStyle(
+          color: Colors.purple,
+          fontStyle: FontStyle.italic,
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +51,12 @@ Widget nameText(){
           registerButton(),
         ],
       ),
-      body: ListView(children: <Widget>[nameText(),],),
+      body: ListView(
+        padding: EdgeInsets.all(30.0),
+        children: <Widget>[
+          nameText(),
+        ],
+      ),
     );
   }
 }
