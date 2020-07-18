@@ -32,7 +32,7 @@ class _RegisterState extends State<Register> {
           color: Colors.purple,
           fontWeight: FontWeight.bold,
         ),
-        helperText: 'Type your firstname ',
+        helperText: 'Please enter your firstname',
         helperStyle: TextStyle(
           color: Colors.purple,
           fontStyle: FontStyle.italic,
@@ -40,6 +40,31 @@ class _RegisterState extends State<Register> {
       ),
     );
   }
+
+
+  Widget lastnameText() {
+    return TextFormField(style: TextStyle(color:Colors.indigo),
+      decoration: InputDecoration(
+        icon: Icon(
+          Icons.portrait,
+          color: Colors.indigo,
+          size: 40.0,
+        ),
+        labelText: 'Lastname :',
+        labelStyle: TextStyle(
+          color: Colors.indigo,
+          fontWeight: FontWeight.bold,
+        ),
+        helperText: 'Please enter your lastname',
+        helperStyle: TextStyle(
+          color: Colors.indigo,
+          fontStyle: FontStyle.italic,
+        ),
+      ),
+    );
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +80,7 @@ class _RegisterState extends State<Register> {
         padding: EdgeInsets.all(30.0),
         children: <Widget>[
           nameText(),
+          lastnameText(),
         ],
       ),
     );
