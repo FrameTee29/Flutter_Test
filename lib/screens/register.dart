@@ -20,7 +20,8 @@ class _RegisterState extends State<Register> {
   }
 
   Widget nameText() {
-    return TextFormField(style: TextStyle(color:Colors.purple),
+    return TextFormField(
+      style: TextStyle(color: Colors.purple,fontSize: 20.0,),
       decoration: InputDecoration(
         icon: Icon(
           Icons.account_box,
@@ -41,9 +42,9 @@ class _RegisterState extends State<Register> {
     );
   }
 
-
   Widget lastnameText() {
-    return TextFormField(style: TextStyle(color:Colors.indigo),
+    return TextFormField(
+      style: TextStyle(color: Colors.indigo,fontSize: 20.0,),
       decoration: InputDecoration(
         icon: Icon(
           Icons.portrait,
@@ -65,7 +66,8 @@ class _RegisterState extends State<Register> {
   }
 
   Widget cardidText() {
-    return TextFormField(style: TextStyle(color:Colors.blue),
+    return TextFormField(
+      style: TextStyle(color: Colors.blue,fontSize: 20.0,),
       decoration: InputDecoration(
         icon: Icon(
           Icons.card_membership,
@@ -87,7 +89,9 @@ class _RegisterState extends State<Register> {
   }
 
   Widget emailText() {
-    return TextFormField(style: TextStyle(color:Colors.green),
+    return TextFormField(
+      keyboardType: TextInputType.emailAddress,
+      style: TextStyle(color: Colors.green,fontSize: 20.0,),
       decoration: InputDecoration(
         icon: Icon(
           Icons.email,
@@ -109,7 +113,8 @@ class _RegisterState extends State<Register> {
   }
 
   Widget usernameText() {
-    return TextFormField(style: TextStyle(color:Colors.yellow[800]),
+    return TextFormField(
+      style: TextStyle(color: Colors.yellow[800],fontSize: 20.0,),
       decoration: InputDecoration(
         icon: Icon(
           Icons.face,
@@ -131,7 +136,12 @@ class _RegisterState extends State<Register> {
   }
 
   Widget passwordText() {
-    return TextFormField(style: TextStyle(color:Colors.orange[900]),
+    return TextFormField(
+      keyboardType: TextInputType.visiblePassword,
+      style: TextStyle(
+        color: Colors.orange[900],
+        fontSize: 20.0,
+      ),
       decoration: InputDecoration(
         icon: Icon(
           Icons.lock,
@@ -151,8 +161,6 @@ class _RegisterState extends State<Register> {
       ),
     );
   }
-
-
 
   @override
   Widget build(BuildContext context) {
