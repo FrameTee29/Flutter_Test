@@ -165,6 +165,8 @@ class _RegisterState extends State<Register> {
         } else {
           return null;
         }
+      },onSaved: (String value){
+        emailString = value.trim();
       },
     );
   }
