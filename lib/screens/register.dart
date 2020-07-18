@@ -112,7 +112,13 @@ class _RegisterState extends State<Register> {
           color: Colors.blue,
           fontStyle: FontStyle.italic,
         ),
-      ),
+      ),validator: (String value){
+        if (value.length < 13 ) {
+          return 'Please enter 13 digits.';
+        } else {
+          return null;
+        }
+      },
     );
   }
 
@@ -200,6 +206,13 @@ class _RegisterState extends State<Register> {
           fontStyle: FontStyle.italic,
         ),
       ),
+      validator: (String value){
+        if (value.length < 6) {
+          return 'Password more 6 character';
+        } else {
+          return null;
+        }
+      },
     );
   }
 
