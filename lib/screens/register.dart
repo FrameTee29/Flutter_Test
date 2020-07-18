@@ -178,7 +178,13 @@ class _RegisterState extends State<Register> {
           color: Colors.yellow[800],
           fontStyle: FontStyle.italic,
         ),
-      ),
+      ),validator: (String value){
+        if (value.length < 6 ) {
+          return 'Username more 6 character';
+        } else {
+          return null;
+        }
+      },
     );
   }
 
