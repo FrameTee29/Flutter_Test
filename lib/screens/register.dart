@@ -72,7 +72,7 @@ class _RegisterState extends State<Register> {
           color: Colors.blue,
           size: 40.0,
         ),
-        labelText: 'ID card number:',
+        labelText: 'ID card number :',
         labelStyle: TextStyle(
           color: Colors.blue,
           fontWeight: FontWeight.bold,
@@ -94,7 +94,7 @@ class _RegisterState extends State<Register> {
           color: Colors.green,
           size: 40.0,
         ),
-        labelText: 'Email:',
+        labelText: 'Email :',
         labelStyle: TextStyle(
           color: Colors.green,
           fontWeight: FontWeight.bold,
@@ -116,7 +116,7 @@ class _RegisterState extends State<Register> {
           color: Colors.yellow[800],
           size: 40.0,
         ),
-        labelText: 'Username:',
+        labelText: 'Username :',
         labelStyle: TextStyle(
           color: Colors.yellow[800],
           fontWeight: FontWeight.bold,
@@ -124,6 +124,28 @@ class _RegisterState extends State<Register> {
         helperText: 'Type your username more 6 character',
         helperStyle: TextStyle(
           color: Colors.yellow[800],
+          fontStyle: FontStyle.italic,
+        ),
+      ),
+    );
+  }
+
+  Widget passwordText() {
+    return TextFormField(style: TextStyle(color:Colors.orange[900]),
+      decoration: InputDecoration(
+        icon: Icon(
+          Icons.lock,
+          color: Colors.orange[900],
+          size: 40.0,
+        ),
+        labelText: 'Password :',
+        labelStyle: TextStyle(
+          color: Colors.orange[900],
+          fontWeight: FontWeight.bold,
+        ),
+        helperText: 'Type your password more 6 character',
+        helperStyle: TextStyle(
+          color: Colors.orange[900],
           fontStyle: FontStyle.italic,
         ),
       ),
@@ -150,6 +172,7 @@ class _RegisterState extends State<Register> {
           cardidText(),
           emailText(),
           usernameText(),
+          passwordText(),
         ],
       ),
     );
