@@ -9,6 +9,12 @@ class _RegisterState extends State<Register> {
   // Explicit
 
   final formKey = GlobalKey<FormState>();
+  String firstnameString,
+      lastnameString,
+      cardidString,
+      emailString,
+      usernameString,
+      passwordString;
 
   // Method
 
@@ -53,6 +59,8 @@ class _RegisterState extends State<Register> {
         } else {
           return null;
         }
+      },onSaved: (String value){
+        firstnameString = value.trim();
       },
     );
   }
@@ -112,8 +120,9 @@ class _RegisterState extends State<Register> {
           color: Colors.blue,
           fontStyle: FontStyle.italic,
         ),
-      ),validator: (String value){
-        if (value.length < 13 ) {
+      ),
+      validator: (String value) {
+        if (value.length < 13) {
           return 'Please enter 13 digits.';
         } else {
           return null;
@@ -148,7 +157,7 @@ class _RegisterState extends State<Register> {
       ),
       validator: (String value) {
         if (!((value.contains('@')) && (value.contains('.')))) {
-          return 'Please Type Email in Email format Exp. you@email.com';
+          return 'Please Type Email in Exp. you@email.com';
         } else {
           return null;
         }
@@ -178,8 +187,9 @@ class _RegisterState extends State<Register> {
           color: Colors.yellow[800],
           fontStyle: FontStyle.italic,
         ),
-      ),validator: (String value){
-        if (value.length < 6 ) {
+      ),
+      validator: (String value) {
+        if (value.length < 6) {
           return 'Username more 6 character';
         } else {
           return null;
@@ -212,7 +222,7 @@ class _RegisterState extends State<Register> {
           fontStyle: FontStyle.italic,
         ),
       ),
-      validator: (String value){
+      validator: (String value) {
         if (value.length < 6) {
           return 'Password more 6 character';
         } else {
