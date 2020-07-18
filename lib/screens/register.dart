@@ -181,6 +181,7 @@ class _RegisterState extends State<Register> {
           emailText(),
           usernameText(),
           passwordText(),
+          
         ],
       ),
     );
