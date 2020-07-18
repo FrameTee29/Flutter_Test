@@ -19,6 +19,11 @@ class _RegisterState extends State<Register> {
     );
   }
 
+
+Widget nameText(){
+  return TextFormField();
+}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +34,7 @@ class _RegisterState extends State<Register> {
           registerButton(),
         ],
       ),
-      body: Text('body'),
+      body: ListView(children: <Widget>[nameText(),],),
     );
   }
 }
