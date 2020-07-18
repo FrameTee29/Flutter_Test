@@ -108,6 +108,28 @@ class _RegisterState extends State<Register> {
     );
   }
 
+  Widget usernameText() {
+    return TextFormField(style: TextStyle(color:Colors.yellow[800]),
+      decoration: InputDecoration(
+        icon: Icon(
+          Icons.face,
+          color: Colors.yellow[800],
+          size: 40.0,
+        ),
+        labelText: 'Username:',
+        labelStyle: TextStyle(
+          color: Colors.yellow[800],
+          fontWeight: FontWeight.bold,
+        ),
+        helperText: 'Type your username more 6 character',
+        helperStyle: TextStyle(
+          color: Colors.yellow[800],
+          fontStyle: FontStyle.italic,
+        ),
+      ),
+    );
+  }
+
 
 
   @override
@@ -127,6 +149,7 @@ class _RegisterState extends State<Register> {
           lastnameText(),
           cardidText(),
           emailText(),
+          usernameText(),
         ],
       ),
     );
