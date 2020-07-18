@@ -8,6 +8,8 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
   // Explicit
 
+  final formKey = GlobalKey<FormState>();
+
   // Method
 
   Widget registerButton() {
@@ -15,13 +17,19 @@ class _RegisterState extends State<Register> {
       icon: Icon(Icons.cloud_upload),
       onPressed: () {
         print('You Click Upload');
+        if (formKey.currentState.validate()) {
+          formKey.currentState.save();
+        }
       },
     );
   }
 
   Widget nameText() {
     return TextFormField(
-      style: TextStyle(color: Colors.purple,fontSize: 20.0,),
+      style: TextStyle(
+        color: Colors.purple,
+        fontSize: 20.0,
+      ),
       decoration: InputDecoration(
         icon: Icon(
           Icons.account_box,
@@ -33,18 +41,27 @@ class _RegisterState extends State<Register> {
           color: Colors.purple,
           fontWeight: FontWeight.bold,
         ),
-        helperText: 'Please enter your firstname',
+        helperText: 'Type your firstname',
         helperStyle: TextStyle(
           color: Colors.purple,
           fontStyle: FontStyle.italic,
         ),
-      ),
+      ),validator: (String value){
+        if (value.isEmpty) {
+          return 'Please Fill Your Firstname in the Blank';
+        } else {
+          return null;
+        }
+      },
     );
   }
 
   Widget lastnameText() {
     return TextFormField(
-      style: TextStyle(color: Colors.indigo,fontSize: 20.0,),
+      style: TextStyle(
+        color: Colors.indigo,
+        fontSize: 20.0,
+      ),
       decoration: InputDecoration(
         icon: Icon(
           Icons.portrait,
@@ -56,18 +73,26 @@ class _RegisterState extends State<Register> {
           color: Colors.indigo,
           fontWeight: FontWeight.bold,
         ),
-        helperText: 'Please enter your lastname',
+        helperText: 'Type your lastname',
         helperStyle: TextStyle(
           color: Colors.indigo,
           fontStyle: FontStyle.italic,
         ),
-      ),
+      ),validator: (String value){
+        if (value.isEmpty) {
+          return 'Please Fill Your Lastname in the Blank';
+        } else {
+        }
+      },
     );
   }
 
   Widget cardidText() {
     return TextFormField(
-      style: TextStyle(color: Colors.blue,fontSize: 20.0,),
+      style: TextStyle(
+        color: Colors.blue,
+        fontSize: 20.0,
+      ),
       decoration: InputDecoration(
         icon: Icon(
           Icons.card_membership,
@@ -79,7 +104,7 @@ class _RegisterState extends State<Register> {
           color: Colors.blue,
           fontWeight: FontWeight.bold,
         ),
-        helperText: 'Please enter your ID card number',
+        helperText: 'Type your ID card number',
         helperStyle: TextStyle(
           color: Colors.blue,
           fontStyle: FontStyle.italic,
@@ -91,7 +116,10 @@ class _RegisterState extends State<Register> {
   Widget emailText() {
     return TextFormField(
       keyboardType: TextInputType.emailAddress,
-      style: TextStyle(color: Colors.green,fontSize: 20.0,),
+      style: TextStyle(
+        color: Colors.green,
+        fontSize: 20.0,
+      ),
       decoration: InputDecoration(
         icon: Icon(
           Icons.email,
@@ -114,7 +142,10 @@ class _RegisterState extends State<Register> {
 
   Widget usernameText() {
     return TextFormField(
-      style: TextStyle(color: Colors.yellow[800],fontSize: 20.0,),
+      style: TextStyle(
+        color: Colors.yellow[800],
+        fontSize: 20.0,
+      ),
       decoration: InputDecoration(
         icon: Icon(
           Icons.face,
@@ -172,17 +203,19 @@ class _RegisterState extends State<Register> {
           registerButton(),
         ],
       ),
-      body: ListView(
-        padding: EdgeInsets.all(30.0),
-        children: <Widget>[
-          nameText(),
-          lastnameText(),
-          cardidText(),
-          emailText(),
-          usernameText(),
-          passwordText(),
-          
-        ],
+      body: Form(
+        key: formKey,
+        child: ListView(
+          padding: EdgeInsets.all(30.0),
+          children: <Widget>[
+            nameText(),
+            lastnameText(),
+            cardidText(),
+            emailText(),
+            usernameText(),
+            passwordText(),
+          ],
+        ),
       ),
     );
   }
