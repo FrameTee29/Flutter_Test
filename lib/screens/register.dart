@@ -64,6 +64,50 @@ class _RegisterState extends State<Register> {
     );
   }
 
+  Widget cardidText() {
+    return TextFormField(style: TextStyle(color:Colors.blue),
+      decoration: InputDecoration(
+        icon: Icon(
+          Icons.card_membership,
+          color: Colors.blue,
+          size: 40.0,
+        ),
+        labelText: 'ID card number:',
+        labelStyle: TextStyle(
+          color: Colors.blue,
+          fontWeight: FontWeight.bold,
+        ),
+        helperText: 'Please enter your ID card number',
+        helperStyle: TextStyle(
+          color: Colors.blue,
+          fontStyle: FontStyle.italic,
+        ),
+      ),
+    );
+  }
+
+  Widget emailText() {
+    return TextFormField(style: TextStyle(color:Colors.green),
+      decoration: InputDecoration(
+        icon: Icon(
+          Icons.email,
+          color: Colors.green,
+          size: 40.0,
+        ),
+        labelText: 'Email:',
+        labelStyle: TextStyle(
+          color: Colors.green,
+          fontWeight: FontWeight.bold,
+        ),
+        helperText: 'Type your email',
+        helperStyle: TextStyle(
+          color: Colors.green,
+          fontStyle: FontStyle.italic,
+        ),
+      ),
+    );
+  }
+
 
 
   @override
@@ -81,6 +125,8 @@ class _RegisterState extends State<Register> {
         children: <Widget>[
           nameText(),
           lastnameText(),
+          cardidText(),
+          emailText(),
         ],
       ),
     );
