@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1078435118935",
+    "firebase_url": "https://flutterpsucoin.firebaseio.com",
+    "project_id": "flutterpsucoin",
+    "storage_bucket": "flutterpsucoin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1078435118935:android:caf5113b0df950da030812",
+        "android_client_info": {
+          "package_name": "com.example.testapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1078435118935-s2l4lgh7apc8o5rdu0ts7smcrqe7de77.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDWHUfAyoWDiWyiHGZ2MUctaQ5uZRvltI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1078435118935-s2l4lgh7apc8o5rdu0ts7smcrqe7de77.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
