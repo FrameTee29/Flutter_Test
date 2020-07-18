@@ -25,6 +25,7 @@ class _RegisterState extends State<Register> {
         print('You Click Upload');
         if (formKey.currentState.validate()) {
           formKey.currentState.save();
+          print('firstname = $firstnameString, lastname = $lastnameString , Card ID = $cardidString , Email = $emailString , Username = $usernameString , Password = $passwordString ');
         }
       },
     );
