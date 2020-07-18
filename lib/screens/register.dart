@@ -129,6 +129,8 @@ class _RegisterState extends State<Register> {
         } else {
           return null;
         }
+      },onSaved: (String value){
+        cardidString = value.trim();
       },
     );
   }
