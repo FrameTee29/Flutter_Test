@@ -82,6 +82,7 @@ class _RegisterState extends State<Register> {
         if (value.isEmpty) {
           return 'Please Fill Your Lastname in the Blank';
         } else {
+          return null;
         }
       },
     );
