@@ -46,7 +46,8 @@ class _RegisterState extends State<Register> {
           color: Colors.purple,
           fontStyle: FontStyle.italic,
         ),
-      ),validator: (String value){
+      ),
+      validator: (String value) {
         if (value.isEmpty) {
           return 'Please Fill Your Firstname in the Blank';
         } else {
@@ -78,7 +79,8 @@ class _RegisterState extends State<Register> {
           color: Colors.indigo,
           fontStyle: FontStyle.italic,
         ),
-      ),validator: (String value){
+      ),
+      validator: (String value) {
         if (value.isEmpty) {
           return 'Please Fill Your Lastname in the Blank';
         } else {
@@ -138,6 +140,13 @@ class _RegisterState extends State<Register> {
           fontStyle: FontStyle.italic,
         ),
       ),
+      validator: (String value) {
+        if (!((value.contains('@')) && (value.contains('.')))) {
+          return 'Please Type Email in Email format Exp. you@email.com';
+        } else {
+          return null;
+        }
+      },
     );
   }
 
