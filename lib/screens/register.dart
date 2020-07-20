@@ -41,12 +41,37 @@ class _RegisterState extends State<Register> {
             email: emailString, password: passwordString)
         .then((response) {
       print('Register Success for Email = $emailString');
-    }).catchError((error) {
-      String title = error.code;
-      String message = error.message;
-
-      print('Title = $title , Message = $message');
     });
+  }
+
+  void myAlert(String title, String message) {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: ListTile(
+              leading: Icon(
+                Icons.add_alert,
+                color: Colors.red,
+              ),
+              title: Text(
+                title,
+                style: TextStyle(color: Colors.red),
+              ),
+            ),
+            content: Text(
+              message,
+            ),
+            actions: <Widget>[
+              FlatButton(
+                child: Text('OK'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
+          );
+        });
   }
 
   Widget nameText() {
