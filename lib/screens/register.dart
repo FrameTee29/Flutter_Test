@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -25,10 +26,22 @@ class _RegisterState extends State<Register> {
         print('You Click Upload');
         if (formKey.currentState.validate()) {
           formKey.currentState.save();
-          print('firstname = $firstnameString, lastname = $lastnameString , Card ID = $cardidString , Email = $emailString , Username = $usernameString , Password = $passwordString ');
+          print(
+              'firstname = $firstnameString, lastname = $lastnameString , Card ID = $cardidString , Email = $emailString , Username = $usernameString , Password = $passwordString ');
+          registerThread();
         }
       },
     );
+  }
+
+  Future<void> registerThread() async {
+    FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+    await firebaseAuth
+        .createUserWithEmailAndPassword(
+            email: emailString, password: passwordString)
+        .then((response) {
+      print('Register Success');
+    });
   }
 
   Widget nameText() {
@@ -60,7 +73,8 @@ class _RegisterState extends State<Register> {
         } else {
           return null;
         }
-      },onSaved: (String value){
+      },
+      onSaved: (String value) {
         firstnameString = value.trim();
       },
     );
@@ -95,7 +109,8 @@ class _RegisterState extends State<Register> {
         } else {
           return null;
         }
-      },onSaved: (String value ){
+      },
+      onSaved: (String value) {
         lastnameString = value.trim();
       },
     );
@@ -130,7 +145,8 @@ class _RegisterState extends State<Register> {
         } else {
           return null;
         }
-      },onSaved: (String value){
+      },
+      onSaved: (String value) {
         cardidString = value.trim();
       },
     );
@@ -166,7 +182,8 @@ class _RegisterState extends State<Register> {
         } else {
           return null;
         }
-      },onSaved: (String value){
+      },
+      onSaved: (String value) {
         emailString = value.trim();
       },
     );
@@ -201,7 +218,8 @@ class _RegisterState extends State<Register> {
         } else {
           return null;
         }
-      },onSaved: (String value){
+      },
+      onSaved: (String value) {
         usernameString = value.trim();
       },
     );
@@ -237,7 +255,8 @@ class _RegisterState extends State<Register> {
         } else {
           return null;
         }
-      },onSaved: (String value){
+      },
+      onSaved: (String value) {
         passwordString = value.trim();
       },
     );
