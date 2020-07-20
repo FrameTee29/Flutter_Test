@@ -41,6 +41,13 @@ class _RegisterState extends State<Register> {
             email: emailString, password: passwordString)
         .then((response) {
       print('Register Success for Email = $emailString');
+    }).catchError((response) {
+      String title = response.code;
+      String message = response.message;
+
+      print('Title = $title , Message = $message');
+
+      myAlert(title, message);
     });
   }
 
