@@ -40,7 +40,12 @@ class _RegisterState extends State<Register> {
         .createUserWithEmailAndPassword(
             email: emailString, password: passwordString)
         .then((response) {
-      print('Register Success');
+      print('Register Success for Email = $emailString');
+    }).catchError((error) {
+      String title = error.code;
+      String message = error.message;
+
+      print('Title = $title , Message = $message');
     });
   }
 
